@@ -173,3 +173,20 @@ Filesystem    Size    Used   Avail Capacity  Mounted on
 testpool       80M    228K     79M     0%    /testpool
 ```
 
+Replacing a hot spare - Create a new dummy replacement spare
+
+```shell
+# dd if=/dev/zero of=/tmp/disk6 bs=4k count=1 seek=16k
+```
+
+Remove the existing spare
+
+```shell
+# sudo zpool remove testpool /tmp/disk5
+```
+
+Add the new spare
+
+```shell
+# sudo zpool add testpool spare /tmp/disk6
+```
