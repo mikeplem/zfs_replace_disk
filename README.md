@@ -18,7 +18,7 @@ Disks used for the original mirror
 
 Disks used to replace the first two disks of the mirror
 
-diskr1 and diskr1 are 128 MB in size
+diskr1 and diskr2 are 128 MB in size
 
 ```shell
 # dd if=/dev/zero of=/tmp/diskr1 bs=4k count=1 seek=32k
